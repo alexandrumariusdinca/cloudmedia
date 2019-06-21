@@ -1,0 +1,518 @@
+/* CSS Document
+	Alexandru Dinca
+
+	Universitatea Valahia Targoviste
+        Lucrare de licenta
+	- est.2018 */
+
+
+
+/*========================================================================
+  CONTENTS
+==========================================================================
+   - INDEX PAGE FOR WEB APP
+/*
+
+/*========================================================================
+PAGE OF CONTENTS
+==========================================================================
+- FONTS
+- CSS RESETS
+- BASE STYLES
+- CONTENT AREA CONTAINERS
+- MEDIA QUERIES
+*/
+
+/*========================================================================
+FONTS
+==========================================================================*/
+
+/* DECLARE YOUR CUSTOM FONTS HERE
+- Sites you can use for fonts are: fonts.com, font squirrel etc.
+- Change the format 'EOT' to 'embedded-opentype' to avoid IE font issues
+*/
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('fonts/Lato-Regular.eot');
+    src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),url('fonts/Lato-Regular.woff2')
+    format('woff2'),url('fonts/Lato-Regular.woff')
+    format('woff'),url('fonts/Lato-Regular.ttf')
+    format('truetype'),url('fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    src: url('fonts/Lato-Bold.eot');
+    src: url('fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),url('fonts/Lato-Bold.woff2')
+    format('woff2'),url('fonts/Lato-Bold.woff')
+    format('woff'),url('fonts/Lato-Bold.ttf')
+    format('truetype'),url('fonts/Lato-Bold.svg#Lato-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal
+}
+
+/*========================================================================
+CSS RESETS (http://meyerweb.com/eric/tools/css/reset/)
+v2.0 | 20110126
+License: none (public domain)
+==========================================================================*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: middle;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+textarea, input {
+    outline:none;
+}
+
+*
+{
+	 box-sizing: border-box;
+}
+
+
+/*========================================================================
+BASE STYLES
+==========================================================================*/
+
+/* Overwrite padding/margins for Bootstrap (use sparingly!)
+==========================================*/
+.no-padding
+{
+    padding-left:0;
+    padding-right:0;
+}
+
+.no-padding-right
+{
+    padding-right:0;
+}
+
+.no-margin
+{
+    margin-left:0;
+    margin-right:0;
+}
+
+.no-margin-right
+{
+    margin-right:0;
+}
+
+.row-bs
+{
+  margin:0;
+  position:relative;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
+.col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,
+.col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,
+.col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+{
+  padding:0;
+}
+
+.container-fluid
+{
+    padding: 0px;
+}
+
+
+/* General Classes
+==========================================*/
+.accessibility, #skip, .hidden
+{
+    display: none;
+}
+
+/* Clear Fix
+==========================================*/
+.clear:before, .clear:after
+{
+    content: " ";
+    display: table;
+}
+.clear:after
+{
+    clear: both;
+}
+
+/* Bold and Italic
+==========================================*/
+strong, b
+{
+    font-weight:bold;
+}
+em, i
+{
+    font-style:italic;
+}
+
+/* Default Anchors and Pseudo Classes
+==========================================*/
+a {
+    color:#3a497f;
+    text-decoration:none;
+    outline:none;
+
+    -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+    -ms-transition: background-color 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+body.noTrans a
+{
+    -webkit-transition:none;
+    -moz-transition:none;
+    -ms-transition:none;
+    -o-transition:none;
+    transition:none;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:active
+{
+    color: #5d5d5d;
+    outline:none;
+}
+a:hover
+{
+    color: #888;
+}
+
+/* Outer Containers
+==========================================*/
+html, body, body > form
+{
+	 height: 100%;
+}
+
+/*========================================================================
+STIL NOU
+==========================================================================*/
+
+body
+{
+    line-height: 1;
+    font-family: 'Lato Regular';
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.site-wrapper
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #C33764;
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+    background: linear-gradient(to right, #1D2671, #C33764);
+
+}
+
+/*========================================================================
+App Title
+==========================================================================*/
+
+h1.app-title
+{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    display: table;
+    margin: 0 auto;
+    padding: 37px 20px 0px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    color: #fff;
+    font-size: 45px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 50px;
+}
+
+/*========================================================================
+UPLOAD box
+==========================================================================*/
+
+#upload-box
+{
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255,255,255, 0.1);
+    /* background: url('../images/bg-green-poly.svg'); */
+    z-index: 10;
+    padding: 40px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+#file-chooser
+{
+    display: none;
+}
+
+h1.upload-title
+{
+    position: relative;
+    display: block;
+    color: #29a58b;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+
+.def-button
+{
+    border-radius: 3px;
+    text-align: left;
+    padding: 6px;
+    width: 150px;
+    margin: 0;
+    left: 0;
+    position: relative;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.87px;
+    margin: 5px 0px;
+    text-transform: uppercase;
+}
+
+.def-button
+{
+    text-align: center;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #000;
+    border: none;
+    cursor: pointer;
+    margin: 5px 0px 5px 0px;
+
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+}
+
+.def-button:hover
+{
+    opacity: .8;
+}
+
+
+.download-holder
+{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+}
+
+button.get-link
+{
+    margin-top: 0px;
+}
+
+/*========================================================================
+Download Button
+==========================================================================*/
+
+#download-link
+{
+    position: relative;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 90px;
+    width: 100%;
+
+    color: #fff;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 1.2px;
+
+    transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+}
+
+#download-link:hover,
+#download-link:focus
+{
+    color: #fff;
+    background: transparent;
+    transform: scale(1.05);
+}
+
+#close-dialog
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../images/close-dialog-icon.png') no-repeat center;
+		background-size: cover;
+    border: none;
+    outline: none;
+    color: transparent;
+    cursor: pointer;
+}
+
+/*========================================================================
+Box cu link-urile generate
+==========================================================================*/
+
+#dialog
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 99999;
+    padding: 40px 10px;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+}
+
+#dialog.open
+{
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/*========================================================================
+Dialog Title
+==========================================================================*/
+
+#dialog h1.dialog-title
+{
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+}
+
+#dialog h1.dialog-title:before
+{
+    content: "";
+    position: relative;
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 10px auto;
+    background: url('../images/dialog-download-icon.png') no-repeat center;
+		background-size: cover;
+}
+
+#dialog h1.dialog-title:after
+{
+    content: "";
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+}
+
+
+
+/*========================================================================
+Dialog Links
+==========================================================================*/
+
+#dialog-links
+{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#dialog-links a
+{
+    position: relative;
+    display: table;
+    margin: 10px auto;
+    color: #fff;
+}
+
+#dialog-links a:hover
+{
+    color: #F4502A;
+}
+
+/*========================================================================
+Reset Mobile cu MediaQuery
+==========================================================================*/

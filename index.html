@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+
+    <title>Aplicatie de transcodare fisiere in cloud folosind Amazon AWS SDK cu JavaScript</title>
+
+    <link rel="stylesheet" type="text/css" href="CSS/index.css" title="standard" />
+
+    <link href="https://fonts.googleapis.com/css?family=Acme|Russo+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.19.0.min.js"></script>
+</head>
+
+<body class="site-body">
+
+<!-- ==== Wrapper ==== -->
+  <div class="site-wrapper">
+
+    <h1 class="app-title">Digital Media Distribution Platform Using Amazon Web Services</h1>
+
+    <!-- ==== Cutia de upload ==== -->
+    <div id="upload-box">
+
+      <h1 class="upload-title">Upload file:</h1>
+
+      <input value="Alege" type="file" id="file-chooser" />
+      <label for="file-chooser" class="up-button def-button">Select file</label>
+
+      <button id="upload-button" class="def-button">Upload</button>
+
+      <div id="results"></div>
+
+      <!-- ==== Buton de download ==== -->
+      <div class="download-holder">
+        <h1 class="upload-title">Generate link:</h1>
+        <button id="download-button" class="def-button get-link">Get Link</button>
+      </div>
+
+      <button id="download-link">Download</button>
+
+    </div>
+
+    <!-- ==== Dialog pop-up box ==== -->
+    <div id="dialog">
+
+      <button id="close-dialog">Inchide</button>
+
+      <h1 class="dialog-title">Link-urile catre fisierele transcodate sunt generate mai jos.</h1>
+
+      <div id="dialog-links"></div>
+    </div>
+
+
+  </div>
+  <!-- ==== Wrapper ==== -->
+
+  <!-- ==== JavaScript ==== -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script type="text/javascript" src="JS/jquery.easing.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+   <script type="text/javascript" src="JS/index.js"></script>
+
+
+</body>
+
+</html>
